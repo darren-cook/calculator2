@@ -89,12 +89,12 @@ body {
 
 .history-list-open {
     height: 100px;
-    width: 129px;
+    width: 128px;
     opacity: 1;
 }
 
 #history-list::-webkit-scrollbar {
-    width: .5vw;
+    width: 5px;
 }
 
 #history-list::-webkit-scrollbar-thumb {
@@ -143,12 +143,18 @@ button {
     background-color: rgba(255, 255, 255, 0.9);
     border-style: none;
     border: 1px solid grey;
-    transition: 100ms;
+    transition: border 1ms;
 }
 
-button:hover {
-    border: 2px solid black;
-    cursor: pointer;
+button:active {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+@media (hover: hover){
+    button:hover {
+        border: 2px solid black;
+        cursor: pointer;
+    }
 }
 
 .tall {
