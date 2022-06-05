@@ -7,4 +7,4 @@ const calc = {
   sqrt: (a) => Math.sqrt(a),
 }
   
-module.exports = calc;
+export { calc }

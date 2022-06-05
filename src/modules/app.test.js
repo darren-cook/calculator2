@@ -1,4 +1,4 @@
-const calc = require('./app');
+import { calc } from './app'
 
 test('basic math tests', () => {
   expect(calc.add(1, 2)).toBe(3);
