@@ -1,0 +1,23 @@
+{
+  "name": "calculator2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darren-cook/calculator2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darren-cook/calculator2/issues"
+  },
+  "homepage": "https://github.com/darren-cook/calculator2#readme",
+  "devDependencies": {
+    "jest": "^28.1.0"
+  }
+}
