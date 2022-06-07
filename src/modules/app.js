@@ -22,7 +22,7 @@ function checkLength(number){
   }
   if(leftLength + rightLength > 9){
     const precision = 11-leftLength;
-    return (Number(number).toFixed(precision).toString())
+    return parseFloat((Number(number).toFixed(precision)).toString())
   }
   return number
 }

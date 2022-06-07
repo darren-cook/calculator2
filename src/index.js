@@ -5,10 +5,10 @@ const historyList = document.getElementById('history-list');
 const numberButtons = document.querySelectorAll('.number-button');
 const operatorButtons = document.querySelectorAll('.operator-button');
 const allclearButton = document.querySelector('.allclear-button');
-const clearButton = document.querySelector('.clear-button');
 const backButton = document.querySelector('.back-button');
 const decimalButton = document.querySelector('.decimal-button');
 const equalButton = document.querySelector('.equal-button');
+const plusminus = document.querySelector('.plusminus-button');
 const mainOperation = document.getElementById('main-operation');
 const mainAnswer = document.getElementById('main-answer');
 
@@ -159,31 +159,6 @@ allclearButton.addEventListener('click', () => {
     mainAnswer.textContent = '';
 })
 
-clearButton.addEventListener('click', () => {
-    if(calculation.ans){
-        calculation.num1 = '';
-        calculation.operation = '';
-        calculation.num2 = '';
-        calculation.ans = '';
-        mainOperation.textContent = '';
-        mainAnswer.textContent = '';
-        return;
-    }
-    if(!calculation.operation || (calculation.operation && !calculation.num2)){
-        calculation.num1 = '';
-        calculation.operation = ''
-        mainOperation.textContent = '';
-    } else {
-        const num2Length = calculation.num2.length;
-        calculation.num2 = '';
-        if(calculation.operation){
-            mainOperation.textContent = mainOperation.textContent.slice(0, -num2Length);
-        } else {
-            mainOperation.textContent = calculation.num1;
-        }
-    }
-})
-
 backButton.addEventListener('click', () => {
     if(calculation.ans){
         calculation.num1 = calculation.ans.slice(0, -1);
@@ -205,6 +180,30 @@ backButton.addEventListener('click', () => {
     } else {
         calculation.num2 = calculation.num2.slice(0, -1);
         mainOperation.textContent = mainOperation.textContent.slice(0, -1);
+    }
+})
+
+// ----- Plus Minus Button -----
+
+plusminus.addEventListener('click', () => {
+    if(calculation.ans){
+        calculation.num1 = (calculation.ans*-1).toString();
+        calculation.operation = '';
+        calculation.num2 = '';
+        calculation.ans = '';
+        mainOperation.textContent = calculation.num1;
+        mainAnswer.textContent = '';
+        return;
+    }
+    if(calculation.num1 && !calculation.num2 && !calculation.operation){
+        calculation.num1 = (calculation.num1*-1).toString();
+        mainOperation.textContent = calculation.num1;
+        return;
+    }
+    if(calculation.num2){
+        const array = mainOperation.textContent.split(" ");
+        calculation.num2 = (calculation.num2*-1).toString();
+        mainOperation.textContent = `${array[0]} ${array[1]} ${calculation.num2}`;
     }
 })
 

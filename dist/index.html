@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,15 +13,14 @@
 <body>
     <div id="calculator">
         <div id="display">
-            <div id="history-list" class="history-list-closed">
-            </div>
+            <div id="history-list" class="history-list-closed"></div>
             <img id="history-button" src="./images/history.png" alt="History Button">
             <div id="main-operation"></div>
             <div id="main-answer"></div>
         </div>
         <div id="buttons">
-            <button class='allclear-button'>AC</button>
-            <button class='clear-button'>C</button>
+            <button class='plusminus-button'>+/-</button>
+            <button class='allclear-button'>C</button>
             <button class="back-button wide">&lt--</button>
             <button class="operator-button" data-operator="power">^</button>
             <button class="operator-button" data-operator="sqrt">√</button>
