@@ -7,18 +7,24 @@ const calc = {
   sqrt: (a) => Math.sqrt(a),
 }
 
-function checkExponential(number){
-  let length = '';
+function checkLength(number){
+  let leftLength = '';
+  let rightLength = '';
   if(number.indexOf('.')==-1){
-    length = number.length;
+    leftLength = number.length;
   } else {
     const array = number.split('.');
-    length = array[0].length;
+    leftLength = array[0].length;
+    rightLength = array[1].length;
   }
-  if(length > 9){
-    return (Number(number).toExponential()).toString();;
+  if(leftLength > 9 || (number.includes('e') && rightLength > 5)){
+    return (Number(number).toExponential(5)).toString();
+  }
+  if(leftLength + rightLength > 9){
+    const precision = 11-leftLength;
+    return (Number(number).toFixed(precision).toString())
   }
   return number
 }
   
-export { calc, checkExponential }
+export { calc, checkLength }
