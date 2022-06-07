@@ -210,7 +210,7 @@ plusminus.addEventListener('click', () => {
 // ----- Equal Button -----
 
 equalButton.addEventListener('click', () => {
-    if(!calculation.num1 || !calculation.operation || !calculation.num2) return;
+    if(calculation.ans || !calculation.num1 || !calculation.operation || !calculation.num2) return;
     if(calculation.num2.charAt(calculation.num2.length-1)==="."){
         calculation.num2 += '0';
         mainOperation.textContent += '0';
