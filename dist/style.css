@@ -151,7 +151,7 @@ body {
     background-color: rgba(182,199,226,1);
 }
 
-#buttons {
+#buttons-container {
     height: 350px;
     width: 255px;
     display: grid;
